@@ -1,0 +1,18 @@
+<h1>Restaurants Manager</h1>
+<hr>
+
+<% @restaurants.each do |restaurant| %>
+  <div class="card">
+    <div class="card-header">
+      <%= link_to restaurant.name, restaurant_path(restaurant) %>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>Address: <%= restaurant.address %></p>
+        <p>Phone: <%= restaurant.phone_number %></p>
+        <p>Category: <%= restaurant.category %></p>
+        <footer class="blockquote-footer">TODO => Add a review of the restaurant here</footer>
+      </blockquote>
+    </div>
+  </div>
+<% end %>
