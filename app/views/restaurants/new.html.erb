@@ -2,21 +2,36 @@
 <hr>
 
 <%= form_for @restaurant do |f| %>
+
+  <% if @restaurant.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @restaurant.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="form-group">
-      <%= f.label :name, 'Restaurant name' %>
-      <%= f.text_field :name, class: "form-control" %>
+    <%= f.label :name, 'Restaurant name' %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
   <div class="form-group">
-      <%= f.label :address, 'Restaurant address' %>
-      <%= f.text_field :address, class: "form-control" %>
+    <%= f.label :address, 'Restaurant address' %>
+    <%= f.text_field :address, class: "form-control" %>
   </div>
   <div class="form-group">
-      <%= f.label :phone_number, 'Restaurant phone number' %>
-      <%= f.text_field :phone_number, class: "form-control" %>
+    <%= f.label :phone_number, 'Restaurant phone number' %>
+    <%= f.text_field :phone_number, class: "form-control" %>
   </div>
   <div class="form-group">
-      <%= f.label :category, 'Restaurant category' %>
-      <%= f.text_field :category, class: "form-control" %>
+    <%= f.label :category, 'Restaurant category' %>
+    <%= f.text_field :category, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :stars, 'Restaurant rating (1 to 5)' %>
+    <%= f.text_field :stars, class: "form-control" %>
   </div>
   <%= f.submit class: "btn btn-primary" %>
   <div style="padding-top:10px;">

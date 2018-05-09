@@ -9,9 +9,10 @@
     <div class="card-body">
       <blockquote class="blockquote mb-0">
         <p>Address: <%= restaurant.address %></p>
-        <p>Phone: <%= restaurant.phone_number %></p>
-        <p>Category: <%= restaurant.category %></p>
-        <footer class="blockquote-footer">TODO => Add a review of the restaurant here</footer>
+        <p class="card-text">Rating: <%= restaurant.stars %></p>
+<!--         <p>Phone #: <%= restaurant.phone_number %></p>
+        <p>Category: <%= restaurant.category %></p> -->
+        <footer class="blockquote-footer"> <i class="fa fa-edit"></i> <%= link_to "Add a review",  new_restaurant_review_path(restaurant) %></footer>
       </blockquote>
     </div>
   </div>
